@@ -6,20 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.PendingIntent;
 import android.nfc.NdefMessage;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static com.example.d0279582.myapplication.Constants.userID;
 import static com.example.d0279582.myapplication.Constants.users;
 
 public class MainActivity extends AppCompatActivity {
     private NdefMessage mNdefPushMessage;
+    TextView[] names;
+    TextView[] scores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +34,29 @@ public class MainActivity extends AppCompatActivity {
                 User user = new User(userName);
                 users.put(userID, user);
         }
+        names = new TextView[3];
+        scores = new TextView[3];
+       names[0] = (TextView) findViewById(R.id.username_1);
+       names[1] = (TextView) findViewById(R.id.username_2);
+       names[2] = (TextView) findViewById(R.id.username_3);
 
-       // mTextView = (TextView) findViewById(R.id.textView_explanation);
-        /*
+       scores[0] = (TextView) findViewById(R.id.userscore_1);
+       scores[1] = (TextView) findViewById(R.id.userscore_2);
+       scores[2] = (TextView) findViewById(R.id.userscore_3);
+
         List<User> sortedList = new ArrayList<User>(users.values());
         Collections.sort(sortedList);
-        String str = "";
-        for (User u : sortedList.subList(0, 3)) {
-            str += u.toString() + "\n";
+        int size;
+        if (sortedList.size()>3) {
+            size = 3;
+        } else {
+            size = sortedList.size();
         }
-            mTextView.setText(str);
-            */
+        for (int i=0; i<size; i++) {
+            names[i].setText(sortedList.get(i).getName());
+            scores[i].setText(sortedList.get(i).getPoints()+"");
+        }
+
         mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
             //nfc is not supported by your device.
@@ -54,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 
     }
-
-    private TextView mTextView;
 
     NfcAdapter mAdapter;
     PendingIntent mPendingIntent;
@@ -88,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 userID = bytesToString(id).toString();
 
                 if (users.containsKey(userID)) {
-                    mTextView.setText("users: " + users);
                     Intent whatHaveYouDoneIntent = new Intent(this, WhatHaveYouDone.class);
                     startActivity(whatHaveYouDoneIntent);
                 } else {

@@ -50,12 +50,12 @@
                     android:gravity="center_vertical">
                     <TextView
 
-                        android:id="@+id/unsername_1"
+                        android:id="@+id/username_1"
                         android:text="Username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
-                        android:id="@+id/unserscore_1"
+                        android:id="@+id/userscore_1"
                         android:gravity="left"
                         android:layout_toRightOf="@id/kitchenking"
                         android:text="Score"
@@ -83,12 +83,12 @@
                     android:gravity="center_vertical">
                     <TextView
 
-                        android:id="@+id/unsername_2"
+                        android:id="@+id/username_2"
                         android:text="Username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
-                        android:id="@+id/unserscore_2"
+                        android:id="@+id/userscore_2"
                         android:gravity="left"
                         android:layout_toRightOf="@id/kitchenking"
                         android:text="Score"
@@ -117,12 +117,12 @@
                     android:gravity="center_vertical">
                     <TextView
 
-                        android:id="@+id/unsername_3"
+                        android:id="@+id/username_3"
                         android:text="Username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
-                        android:id="@+id/unserscore_3"
+                        android:id="@+id/userscore_3"
                         android:gravity="left"
                         android:layout_toRightOf="@id/kitchenking"
                         android:text="Score"
