@@ -1,52 +1,16 @@
 package com.example.d0279582.myapplication;
 
 import android.content.Intent;
-import android.nfc.FormatException;
 import android.nfc.NfcAdapter;
-import android.nfc.Tag;
-import android.nfc.tech.MifareClassic;
-import android.nfc.tech.MifareUltralight;
-import android.nfc.tech.NdefFormatable;
-import android.nfc.tech.NfcA;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import android.app.Activity;
-import android.nfc.NfcAdapter;
-import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
-import android.app.Activity;
 import android.app.PendingIntent;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.IntentFilter.MalformedMimeTypeException;
 import android.nfc.NdefMessage;
-import android.nfc.NdefRecord;
-import android.nfc.NfcAdapter;
-import android.nfc.Tag;
-import android.nfc.tech.Ndef;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private NdefMessage mNdefPushMessage;
@@ -113,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 if (users.containsKey(tagId)) {
                     //login
                 } else {
-                    //Intent registerIntent = new Intent(this, LoginActivity.class);
+                    //Intent registerIntent = new Intent(this, RegisterActivity.class);
                     Intent registerIntent = new Intent(this, WhatHaveYouDone.class);
                     startActivity(registerIntent);
                 }
