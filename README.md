@@ -13,9 +13,7 @@ Auf Grund einer Punkteverteilung je Aktion z.B.:
 * Die Spülmaschine einräumt: 7 Punkte
 *	Den Boden fegt: 3 Punkte
 *	Die Theke/Arbeitsplatte wischt: 2 Punkte
-*	Sein Geschirr auf die Spülmaschine stellt: -2 Punkte
-*	… gerne auch noch mehr Punkte
-*	Automatisch vom System: 2 Punkte für ein Voting
+* ggf. noch zu erweitern
 
 bekommt man Punkte zugeschrieben und wird dann mit den meisten Punkten zum KitchenKing.
 
