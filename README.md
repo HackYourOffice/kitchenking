@@ -1,6 +1,7 @@
 # KitchenKing
 
-Idee: Über einen Gamificationansatz soll versucht werden Kollegen dazu zu bringen eine Küche ohne Küchendienst in Ordnung zu halten.
+## Idee: 
+Über einen Gamificationansatz soll versucht werden Kollegen dazu zu bringen eine Küche ohne Küchendienst in Ordnung zu halten.
 
 Dazu sollte es in einer ersten Ausbaustufe so sein, dass man auf einem Android-Device in der Küche sich per NFC authentifiziert und dann eine Aktion auswählt, die man durchgeführt hat. 
 
