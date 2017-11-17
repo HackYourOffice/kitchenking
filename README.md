@@ -1,11 +1,11 @@
 # KitchenKing
 
-Idee: Über einen Gameificationansatz soll versucht werden Kollegen dazu zu bringen eine Küche ohne Küchendienst in Ordnung zu halten.
+Idee: Über einen Gamificationansatz soll versucht werden Kollegen dazu zu bringen eine Küche ohne Küchendienst in Ordnung zu halten.
 
-Dazu solle es in einer ersten Ausbaustufe so sein, dass man auf einem Android-Device in der Küche sich per NFC authentifiziert und dann eine Aktion auswählt, die man durchgeführt hat. 
+Dazu sollte es in einer ersten Ausbaustufe so sein, dass man auf einem Android-Device in der Küche sich per NFC authentifiziert und dann eine Aktion auswählt, die man durchgeführt hat. 
 
 Auf Grund einer Punkteverteilung je Aktion z.B.:
-•	Seine Geschirr einräumt: 1 Punkt
+•	Sein Geschirr einräumt: 1 Punkt
 •	Die Spülmaschine ausräumt: 5 Punkte
 •	Die Spülmaschine einräumt: 7 Punkte
 •	Den Boden fegt: 3 Punkte
