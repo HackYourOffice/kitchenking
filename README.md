@@ -24,3 +24,21 @@ bekommt man Punkte zugeschrieben und wird dann mit den meisten Punkten zum Kitch
 * Durchführung einer Aktion
 * Punkteübersicht
 * Automatischer Logout
+
+## Ideen für weitere Funktionalitäten
+* Mit der Identifikation per NFC wird ein Foto geschossen
+* Belohnungssystem:
+ * Musikwunsch per Sprachsteuerung abgeben
+ * Es erscheint ein Random-Katzenfoto/Witz-des-Tages/...
+ * Veröffentlichung der Aktionen und Zwischenstände in unterschiedliche Kanäle (Mattermost, Twitter, Monitoring, ...)
+* Statistik über Aktionen
+* Kundenkonto
+ * Persönliche Statistik
+ * Aktionshistorie
+* Aktionen erweiteren, gruppieren, ...
+* Umgekehrte Reihenfolge auf der Startseite
+* Änderungen am Punktesystem
+ * Berücksichtigung des eingeräumten/ausgeräumten Gewichts 
+ * Höhe der Punkte zu je nach Tageszeit höher/niederiger
+ * x-fach Punkte zu belibieger Zeit
+ * x-Fach Punkte bei besonderen Events (z.B. Sprintwechsel)
