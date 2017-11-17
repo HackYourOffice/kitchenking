@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        mLoginFormView = findViewById(R.id.login_form);
+        mLoginFormView = findViewById(R.id.register_form);
     }
 
     private void registerUser(){
