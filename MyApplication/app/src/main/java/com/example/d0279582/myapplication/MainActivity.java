@@ -58,8 +58,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         users = new HashMap<>();
+        int points = 0;
+
+        Intent startIntent = getIntent();
+        if (startIntent != null && startIntent.hasExtra("EXTRA_POINTS")) {
+            Bundle extras = startIntent.getExtras();
+            String str =  extras.getString("EXTRA_POINTS");
+            points = Integer.parseInt(str);
+        }
 
         mTextView = (TextView) findViewById(R.id.textView_explanation);
+        mTextView.setText("" + points);
         mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
             //nfc not support your device.
@@ -104,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 if (users.containsKey(tagId)) {
                     //login
                 } else {
-                    Intent registerIntent = new Intent(this, LoginActivity.class);
+                    //Intent registerIntent = new Intent(this, LoginActivity.class);
+                    Intent registerIntent = new Intent(this, WhatHaveYouDone.class);
                     startActivity(registerIntent);
                 }
 
@@ -122,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
+    @Override
+    public Intent getIntent() {
+        return super.getIntent();
+    }
 }
