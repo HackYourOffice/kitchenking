@@ -32,12 +32,9 @@ public class MainActivity extends AppCompatActivity {
                 users.put(userID, user);
         }
 
-
         mTextView = (TextView) findViewById(R.id.textView_explanation);
 
-        if (users.get(userID) != null) {
-            mTextView.setText("" + users.get(userID).getPoints());
-        }
+            mTextView.setText(users + "");
 
         mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
