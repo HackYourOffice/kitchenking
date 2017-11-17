@@ -4,16 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.example.d0279582.myapplication.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/kitchenking_logo_in_app"
+            android:adjustViewBounds="true"
+            android:maxHeight="128dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
 
-    <TextView
-        android:id="@+id/textView_explanation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/kitchenking"
+                    android:src="@drawable/krone_pl1"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_toRightOf="@id/kitchenking"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
 
+                        android:id="@+id/unsername_1"
+                        android:text="Username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/unserscore_1"
+                        android:gravity="left"
+                        android:layout_toRightOf="@id/kitchenking"
+                        android:text="Score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/kitchenking_2"
+                    android:src="@drawable/krone_pl2"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+
+                        android:id="@+id/unsername_2"
+                        android:text="Username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/unserscore_2"
+                        android:gravity="left"
+                        android:layout_toRightOf="@id/kitchenking"
+                        android:text="Score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/kitchenking_3"
+                    android:src="@drawable/krone_pl3"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_toRightOf="@id/kitchenking"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+
+                        android:id="@+id/unsername_3"
+                        android:text="Username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/unserscore_3"
+                        android:gravity="left"
+                        android:layout_toRightOf="@id/kitchenking"
+                        android:text="Score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/nfc_logo"
+            android:src="@drawable/nfc_logo"
+            android:adjustViewBounds="true"
+            android:maxHeight="64dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

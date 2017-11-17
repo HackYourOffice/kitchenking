@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 users.put(userID, user);
         }
 
-        mTextView = (TextView) findViewById(R.id.textView_explanation);
-
+       // mTextView = (TextView) findViewById(R.id.textView_explanation);
+        /*
         List<User> sortedList = new ArrayList<User>(users.values());
         Collections.sort(sortedList);
         String str = "";
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             str += u.toString() + "\n";
         }
             mTextView.setText(str);
+            */
         mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
             //nfc is not supported by your device.
