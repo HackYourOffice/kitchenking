@@ -25,8 +25,12 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -46,12 +50,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private NdefMessage mNdefPushMessage;
+    private Map<String, User> users;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        users = new HashMap<>();
 
         mTextView = (TextView) findViewById(R.id.textView_explanation);
         mAdapter = NfcAdapter.getDefaultAdapter(this);
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        
+
         String action = intent.getAction();
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)
                 || NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)
@@ -93,7 +99,16 @@ public class MainActivity extends AppCompatActivity {
 
                 // Unknown tag type
                 byte[] id = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
-                mTextView.setText("Read content: " + "     "+  bytesToString(id));
+                String tagId = bytesToString(id).toString();
+
+                if (users.containsKey(tagId)) {
+                    //login
+                } else {
+                    Intent registerIntent = new Intent(this, LoginActivity.class);
+                    startActivity(registerIntent);
+                }
+
+                mTextView.setText("Read content: " + "     "+  tagId);
         }
     }
 
@@ -105,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return s;
     }
+
 
 
 
