@@ -13,6 +13,7 @@ Auf Grund einer Punkteverteilung je Aktion z.B.:
 *	Sein Geschirr auf die Spülmaschine stellt: -2 Punkte
 *	… gerne auch noch mehr Punkte
 *	Automatisch vom System: 2 Punkte für ein Voting
+
 bekommt man Punkte zugeschrieben und wird dann mit den meisten Punkten zum KitchenKing.
 
 Sollte der User noch nicht bekannt sein, wird ein Name abgefragt.
