@@ -50,7 +50,7 @@ public class WhatHaveYouDone extends AppCompatActivity {
     }
 
     private void getBack() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, NewScoreActivity.class);
         intent.putExtra("EXTRA_POINTS", points+"");
         startActivity(intent);
     }

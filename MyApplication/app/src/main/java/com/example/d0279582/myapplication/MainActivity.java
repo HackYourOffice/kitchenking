@@ -25,19 +25,13 @@ public class MainActivity extends AppCompatActivity {
         int points = 0;
 
         Intent startIntent = getIntent();
-        if (startIntent != null) {
-            if (startIntent.hasExtra("EXTRA_POINTS")) {
-                Bundle extras = startIntent.getExtras();
-                String str = extras.getString("EXTRA_POINTS");
-                points = Integer.parseInt(str);
-                addPoints(points);
-            } else if (startIntent.hasExtra("EXTRA_NAME")) {
+        if (startIntent.hasExtra("EXTRA_NAME")) {
                 Bundle extras = startIntent.getExtras();
                 String userName = extras.getString("EXTRA_NAME");
                 User user = new User(userName);
                 users.put(userID, user);
-            }
         }
+
 
         mTextView = (TextView) findViewById(R.id.textView_explanation);
 
@@ -53,11 +47,6 @@ public class MainActivity extends AppCompatActivity {
         mPendingIntent = PendingIntent.getActivity(this, 0, new Intent(this,
                 getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 
-    }
-
-    private void addPoints(int points) {
-        User user = users.get(userID);
-        user.setPoints(user.getPoints() + points);
     }
 
     private TextView mTextView;

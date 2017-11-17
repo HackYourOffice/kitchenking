@@ -30,7 +30,8 @@
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_registration" />
-        <activity android:name=".WhatHaveYouDone"></activity>
+        <activity android:name=".WhatHaveYouDone" />
+        <activity android:name=".NewScoreActivity"></activity>
     </application>
 
 </manifest>
