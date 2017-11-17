@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle extras = startIntent.getExtras();
                 String str = extras.getString("EXTRA_POINTS");
                 points = Integer.parseInt(str);
+                addPoints(points);
             } else if (startIntent.hasExtra("EXTRA_NAME")) {
                 Bundle extras = startIntent.getExtras();
                 String userName = extras.getString("EXTRA_NAME");
@@ -39,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mTextView = (TextView) findViewById(R.id.textView_explanation);
-        mTextView.setText("" + points);
+
+        if (users.get(userID) != null) {
+            mTextView.setText("" + users.get(userID).getPoints());
+        }
+
         mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
             //nfc not support your device.
@@ -49,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
                 getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 
     }
+
+    private void addPoints(int points) {
+        User user = users.get(userID);
+        user.setPoints(user.getPoints() + points);
+    }
+
     private TextView mTextView;
 
     NfcAdapter mAdapter;
