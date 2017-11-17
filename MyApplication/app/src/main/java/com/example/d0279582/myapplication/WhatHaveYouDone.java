@@ -10,6 +10,8 @@ public class WhatHaveYouDone extends AppCompatActivity {
     Button dishwasherin;
     Button dishwasherout;
     Button mop;
+    Button mug;
+
     int points;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +21,13 @@ public class WhatHaveYouDone extends AppCompatActivity {
         dishwasherin = (Button) findViewById(R.id.activity_button_dishwasher_in);
         dishwasherout = (Button) findViewById(R.id.activity_button_dishwasher_out);
         mop = (Button) findViewById(R.id.activity_button_mop);
+        mug = (Button) findViewById(R.id.activity_button_mug);
 
         dishwasherin.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                points = 5;
+                points = 7;
                 getBack();
             }
         });
@@ -33,13 +36,21 @@ public class WhatHaveYouDone extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                points = 3;
+                points = 5;
                 getBack();
             }
         });
 
         mop.setOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View view) {
+                points = 3;
+                getBack();
+            }
+        });
+
+        mug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 points = 1;

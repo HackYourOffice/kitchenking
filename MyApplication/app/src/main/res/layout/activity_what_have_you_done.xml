@@ -4,25 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.example.d0279582.myapplication.WhatHaveYouDone">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/kitchenking_logo_in_app"
+            android:adjustViewBounds="true"
+            android:maxHeight="128dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/activity_button_dishwasher_out"
-            android:text="Spülmaschine ausgeräumt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/spuelmasch_raus_60"
+            android:text="Spülmaschine ausgeräumt \n 5 Punkte"
+            />
         <Button
             android:id="@+id/activity_button_dishwasher_in"
-            android:text="Spülmaschine eingeräumt"
+            android:drawableLeft="@drawable/spuelmasch_rein_60"
+            android:text="Spülmaschine eingeräumt \n 7 Punkte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/activity_button_mop"
-            android:text="Boden gefegt"
+            android:text="Boden gefegt \n 3 Punkte"
+            android:drawableLeft="@drawable/boden_fegen_60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/activity_button_mug"
+            android:text="Tasse eingeräumt \n 1 Punkt"
+            android:drawableLeft="@drawable/tasse_einraeumen_60"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
