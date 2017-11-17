@@ -4,19 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.example.d0279582.myapplication.NewScoreActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-    <TextView
-        android:id="@+id/added_points"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/total_points"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/kitchenking_logo_in_app"
+            android:adjustViewBounds="true"
+            android:maxHeight="128dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/check"
+            android:src="@drawable/check_v2"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:maxHeight="144dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/added_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_below="@id/check"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="check"/>
+        <TextView
+            android:id="@+id/total_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_below="@id/added_points"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="check"/>
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
