@@ -12,10 +12,11 @@ import java.util.Map;
 import android.app.PendingIntent;
 import android.nfc.NdefMessage;
 
+import static com.example.d0279582.myapplication.Constants.userID;
+
 public class MainActivity extends AppCompatActivity {
     private NdefMessage mNdefPushMessage;
-    private Map<String, User> users;
-
+    public static Map<String, User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,17 @@ public class MainActivity extends AppCompatActivity {
         int points = 0;
 
         Intent startIntent = getIntent();
-        if (startIntent != null && startIntent.hasExtra("EXTRA_POINTS")) {
-            Bundle extras = startIntent.getExtras();
-            String str =  extras.getString("EXTRA_POINTS");
-            points = Integer.parseInt(str);
+        if (startIntent != null) {
+            if (startIntent.hasExtra("EXTRA_POINTS")) {
+                Bundle extras = startIntent.getExtras();
+                String str = extras.getString("EXTRA_POINTS");
+                points = Integer.parseInt(str);
+            } else if (startIntent.hasExtra("EXTRA_NAME")) {
+                Bundle extras = startIntent.getExtras();
+                String userName = extras.getString("EXTRA_NAME");
+                User user = new User(userName);
+                users.put(userID, user);
+            }
         }
 
         mTextView = (TextView) findViewById(R.id.textView_explanation);
@@ -72,17 +80,19 @@ public class MainActivity extends AppCompatActivity {
 
                 // Unknown tag type
                 byte[] id = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
-                String tagId = bytesToString(id).toString();
+                userID = bytesToString(id).toString();
 
-                if (users.containsKey(tagId)) {
-                    //login
+                if (users.containsKey(userID)) {
+                    mTextView.setText("users: " + users);
+                    Intent whatHaveYouDoneIntent = new Intent(this, WhatHaveYouDone.class);
+                    startActivity(whatHaveYouDoneIntent);
                 } else {
-                    //Intent registerIntent = new Intent(this, RegisterActivity.class);
-                    Intent registerIntent = new Intent(this, WhatHaveYouDone.class);
+                    Intent registerIntent = new Intent(this, RegisterActivity.class);
+
                     startActivity(registerIntent);
                 }
 
-                mTextView.setText("Read content: " + "     "+  tagId);
+            //mTextView.setText("Read content: " + "     "+  userID);
         }
     }
 
