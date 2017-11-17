@@ -9,8 +9,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import static com.example.d0279582.myapplication.MainActivity.users;
-
 /**
  * A register screen that offers registering with a name.
  */

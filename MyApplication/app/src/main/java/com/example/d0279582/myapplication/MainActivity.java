@@ -13,16 +13,15 @@ import android.app.PendingIntent;
 import android.nfc.NdefMessage;
 
 import static com.example.d0279582.myapplication.Constants.userID;
+import static com.example.d0279582.myapplication.Constants.users;
 
 public class MainActivity extends AppCompatActivity {
     private NdefMessage mNdefPushMessage;
-    public static Map<String, User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        users = new HashMap<>();
         int points = 0;
 
         Intent startIntent = getIntent();
