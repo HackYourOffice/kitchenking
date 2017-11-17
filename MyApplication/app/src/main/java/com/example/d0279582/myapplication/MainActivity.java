@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import android.app.PendingIntent;
@@ -34,11 +37,16 @@ public class MainActivity extends AppCompatActivity {
 
         mTextView = (TextView) findViewById(R.id.textView_explanation);
 
-            mTextView.setText(users + "");
-
+        List<User> sortedList = new ArrayList<User>(users.values());
+        Collections.sort(sortedList);
+        String str = "";
+        for (User u : sortedList.subList(0, 3)) {
+            str += u.toString() + "\n";
+        }
+            mTextView.setText(str);
         mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
-            //nfc not support your device.
+            //nfc is not supported by your device.
             return;
         }
         mPendingIntent = PendingIntent.getActivity(this, 0, new Intent(this,
@@ -100,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return s;
     }
-
 
     @Override
     public Intent getIntent() {
