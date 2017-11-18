@@ -14,7 +14,7 @@ public class WhatHaveYouDone extends AppCompatActivity {
     Button mug;
     ImageButton imgButton;
     Button easterEgg;
-    int eggCounter;
+    int eggCounter=1;
 
     int points;
 
@@ -70,7 +70,7 @@ public class WhatHaveYouDone extends AppCompatActivity {
             public void onClick(View view) {
                 if (eggCounter==5) {
                     easterEgg.setVisibility(View.VISIBLE);
-                    eggCounter=0;
+                    eggCounter=1;
                     imgButton.setVisibility(View.INVISIBLE);
                 } else {
                     eggCounter++;
