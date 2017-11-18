@@ -46,13 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         List<User> sortedList = new ArrayList<User>(users.values());
         Collections.sort(sortedList);
-        int size;
-        if (sortedList.size()>3) {
-            size = 3;
-        } else {
-            size = sortedList.size();
-        }
-        for (int i=0; i<size; i++) {
+
+        for (int i=0; sortedList.size()>3 ? i<3 : i<sortedList.size(); i++) {
             names[i].setText(sortedList.get(i).getName());
             scores[i].setText(sortedList.get(i).getPoints()+"");
         }
