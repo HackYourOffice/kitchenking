@@ -6,22 +6,31 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context="com.example.d0279582.myapplication.WhatHaveYouDone">
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/activity_button_beer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:drawableLeft="@drawable/bier_holen_60"
+        android:text="Bier geholt \n 1 Punkt"
+        android:visibility="invisible"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal">
-        <ImageView
+        <ImageButton
+            android:id="@+id/imgButton"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:src="@drawable/kitchenking_logo_in_app"
-            android:adjustViewBounds="true"
-            android:maxHeight="128dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:background="@drawable/kitchenking_logo_in_app"
+            android:layout_width="128dp"
+            android:layout_height="128dp" />
         <Button
             android:id="@+id/activity_button_dishwasher_out"
             android:layout_width="match_parent"
@@ -48,4 +57,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
